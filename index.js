@@ -15,9 +15,9 @@ app.use(parser.urlencoded({
 app.use(parser.json())
 
 app.post('/api/token', async (req, res) => {
-        await sendPushNotification(req.body.token, req.body.message);
+    const result = await sendPushNotification(req.body.token, req.body.message);
 
-    // console.log('Result ', result);
+    res.status(200).send('Result ', result);
 })
 
 const port = process.env.PORT || 4000;
