@@ -21,7 +21,7 @@ app.get('/', (req, res) => {
 app.post('/api/token', async (req, res) => {
     const result = await sendPushNotification(req.body.token, req.body.message);
 
-    res.status(200).send('Result ', result);
+    res.status(200).send(result);
 })
 
 const port = process.env.PORT || 4000;
