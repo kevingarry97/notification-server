@@ -14,6 +14,10 @@ app.use(parser.urlencoded({
 }))
 app.use(parser.json())
 
+app.get('/', (req, res) => {
+    res.send('Hello');
+})
+
 app.post('/api/token', async (req, res) => {
     const result = await sendPushNotification(req.body.token, req.body.message);
 
